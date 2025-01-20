@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0;
+  list-style: none;
+  margin: 0;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+  padding: 5px 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+header nav ul li a.active {
+  color: white;
+  background: black;
+  border-radius: 5px;
+}
+
+section {
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#wedding {
+  background: url("assets/bg.jpg") no-repeat fixed center;
+  background-size: cover;
+}
+
+#wedding p {
+  color: white;
+}
+
+#venue {
+  background: #f9f9f9;
+}
+
+#area {
+  background: #dfe4ea;
+}
+
+#info {
+  background: #ced6e0;
+}
+
+#rsvp {
+  background: #a4b0be;
+}
+
+#photos {
+  background: #747d8c;
+  color: white;
+}
+
+#music {
+  background: #57606f;
+  color: white;
+}
+/*
+@media (max-width: 768px) {
+  header nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+*/
