@@ -1,14 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('header nav ul li a');
-  
-    // Highlight current section
-    window.addEventListener('scroll', () => {
+
+    const listener = () => {
       let current = '';
       const sections = document.querySelectorAll('section');
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop - sectionHeight / 2) {
+        if (scrollY >= sectionTop - sectionHeight / 2) {
           current = section.getAttribute('id');
         }
       });
@@ -18,7 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
           link.classList.add('active');
         }
       });
-    });
+    };
+  
+    // Highlight current section
+    window.addEventListener('scroll', listener);
   
     // Smooth scrolling
     links.forEach(link => {
@@ -28,5 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         target.scrollIntoView({ behavior: 'smooth' });
       });
     });
+
+    listener();
   });
   

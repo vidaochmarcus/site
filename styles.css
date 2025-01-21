@@ -3,12 +3,14 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+/* header */
+
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: white;
+  background: orchid;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -33,9 +35,26 @@ header nav ul li a {
 
 header nav ul li a.active {
   color: white;
-  background: black;
+  background: fuchsia;
   border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+  header nav ul {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  header nav ul li a span {
+    display: none;
+  }
+  header nav ul li a.active span {
+    display: inline;
+  }
+}
+
+/* sections */
 
 section {
   height: 100vh;
@@ -52,16 +71,44 @@ section {
   background-size: cover;
 }
 
-#wedding p {
+#wedding .banner {
+  background-color: rgba(255, 255, 255, 0.3);
+  rotate: -15deg;
+  width: 300%;
+  margin: 0;
+}
+
+#wedding .banner p {
   color: white;
+  margin: 0;
+  font-size: 13vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #venue {
   background: #f9f9f9;
 }
 
-#area {
+#venue div.flexContainer {
+  width: 99%;
+  gap: 10px;
+}
+
+#venue div.flex {
+  border: 1px solid black;
+}
+
+#housing {
   background: #dfe4ea;
+}
+
+#housing div.flexContainer {
+  width: 99%;
+  gap: 10px;
+}
+
+#housing div.flex {
+  border: 1px solid black;
 }
 
 #info {
@@ -81,13 +128,14 @@ section {
   background: #57606f;
   color: white;
 }
-/*
-@media (max-width: 768px) {
-  header nav ul {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
+
+/* shared */
+
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-*/
+.flex {
+  flex: 1;
+}
