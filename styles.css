@@ -14,7 +14,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background: orchid;
+  background: rgba(200, 100, 200, 0.4);
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -53,7 +53,7 @@ header nav ul li a.active span {
 
 header nav ul li a.active {
   color: white;
-  background: fuchsia;
+  background: darkmagenta;
   border-radius: 5px;
 }
 
@@ -78,6 +78,12 @@ section {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+section h1 {
+  font-size: xx-large;
+  font-style: italic;
+  color: #702963;
 }
 
 #wedding {
@@ -106,22 +112,9 @@ section {
   background: #f9f9f9;
 }
 
-#venue div.flexContainer {
-  width: 99%;
-  gap: 10px;
-}
-
-#venue div.flex {
-  border: 1px solid black;
-}
-
 #housing {
   background: #dfe4ea;
   padding: 20px;
-}
-
-#housing div.flex {
-  border: 1px solid black;
 }
 
 #info {
@@ -156,9 +149,11 @@ section {
 .flex {
   flex: 0 0 90%; 
   scroll-snap-align: center; 
-  border: 1px solid #ccc;
+  border: 0;
   padding: 16px;
   box-sizing: border-box;
+  background: rgba(200, 100, 200, 0.4);
+  border-radius: 15px;
 }
 
 @media (min-width: 768px) {
