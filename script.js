@@ -1,4 +1,23 @@
+const dateAnimation = () => {
+  const textElement = document.getElementById("dateText");
+  const text = "2025 07 05";
+  let index = 0;
+
+  textElement.classList.add("fade-in");
+
+  function typeCharacter() {
+    if (index < text.length) {
+      textElement.textContent += text[index];
+      index++;
+      setTimeout(typeCharacter, 250);
+    }
+  }
+
+  typeCharacter();
+};
+
 document.addEventListener('DOMContentLoaded', () => {
+  dateAnimation();
     const links = document.querySelectorAll('header nav ul li a');
 
     const listener = () => {

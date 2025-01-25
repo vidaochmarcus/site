@@ -71,8 +71,8 @@ header nav ul li a.active {
 
 section {
   scroll-snap-align: center; 
-  min-height: 100vh;
-  padding: 20px;
+  min-height: 80vh;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -94,27 +94,33 @@ section h1 {
   overflow: hidden;
 }
 
-#wedding .banner {
-  background-color: rgba(255, 255, 255, 0.3);
-  rotate: -15deg;
-  width: 300%;
-  margin: 0;
-}
-
-#wedding .banner p {
-  color: white;
-  margin: 0;
-  font-size: 13vw;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 #venue {
-  background: #f9f9f9;
+  background-image: url('assets/wedding.jpg');
+  background-size: 60%;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #E8D6D2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+#venue div.flex {
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 1px solid gray;
+  color: black;
 }
 
 #housing {
-  background: #dfe4ea;
-  padding: 20px;
+  background: white;
+}
+
+#housing img {
+  max-width: 90%;
 }
 
 #info {
@@ -122,8 +128,20 @@ section h1 {
 }
 
 #rsvp {
-  background: #a4b0be;
-  height: 100vh;
+  background: url("assets/osa.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-attachment: fixed;
+  background-color: #E8D6D2;
+  height: 80vh;
+
+  justify-content: flex-start;
+  padding-top: 10vh;
+}
+
+#toastmasters img {
+  max-width: 80%;
+  border-radius: 10px;
 }
 
 #photos {
@@ -136,7 +154,66 @@ section h1 {
   color: white;
 }
 
+section#end {
+  height: 10px;
+  min-height: 10px;
+  background-color: black;
+}
+
+/* animations */
+
+#wedding .banner.fade-in {
+  background-color: rgba(200, 100, 200, 0.4);
+}
+
+#wedding .banner {
+  opacity: 1;
+  background-color: transparent;
+  padding: 10px;
+  transition: background-color 2s ease-in-out;
+
+  rotate: -15deg;
+  width: 300%;
+  margin: 0;
+  margin-top: 35vh;
+
+  color: white;
+  font-size: 13vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@media (min-width: 768px) {
+  #wedding .banner {
+    font-size: 100px;
+  }
+}
+
 /* shared */
+
+a {
+  color: darkmagenta;
+}
+
+a:visited {
+  color: darkmagenta;
+}
+
+a:hover {
+  color: rgba(200, 100, 200, 0.4);
+}
+
+.left {
+  text-align: left;
+}
+
+.bottom {
+  position: relative;
+  bottom: 10px;
+}
+
+.margin-top {
+  margin-top: 30px;
+}
 
 .flexContainer {
   display: flex;
@@ -162,12 +239,11 @@ section h1 {
     gap: 24px; 
     justify-content: space-between; 
   }
+
   .flex {
     flex: 1; 
   }
-}
 
-@media (min-width: 768px) {
   .flexContainer {
     flex-wrap: wrap;
   }
