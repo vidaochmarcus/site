@@ -1,3 +1,20 @@
+const resizeMap = () => {
+  console.log('hello?');
+
+  const mapContainer = document.getElementById("map");
+
+  const mapIframe = document.querySelector("#map iframe");
+
+  console.log(mapContainer.clientWidth);
+
+  mapIframe.style.width = mapContainer.clientWidth + 'px';
+  mapIframe.style.height = mapContainer.clientHeight + 'px';
+}
+
+document.addEventListener('resize', (event) => resizeMap());
+
+setTimeout(resizeMap, 10);
+
 const dateAnimation = () => {
   const textElement = document.getElementById("dateText");
   const text = "2025 07 05";
