@@ -1,9 +1,14 @@
 const resizeMap = () => {
+  const header = document.querySelector("header");
+  const buffer = document.querySelector("div#buffer");
+
+  buffer.style.height = header.clientHeight + 'px';
+  
   const mapContainer = document.getElementById("map");
   const mapIframe = document.querySelector("#map iframe");
 
   mapIframe.style.width = mapContainer.clientWidth + 'px';
-  mapIframe.style.height = mapContainer.clientHeight + 'px';
+  mapIframe.style.height = (mapContainer.clientHeight - buffer.clientHeight) + 'px';
 }
 
 document.addEventListener('resize', (event) => resizeMap());
@@ -34,16 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const listener = () => {
       let current = '';
+      const main = document.querySelector('main');
       const sections = document.querySelectorAll('section');
       sections.forEach(section => {
-        console.log(section.id);
-        console.log(scrollY);
-        console.log('offsetTop', section.offsetTop);
-        console.log('sectionHeight', section.clientHeight);
-
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        if (scrollY >= sectionTop - sectionHeight / 2) {
+        if (main.scrollTop >= sectionTop - sectionHeight / 2) {
           current = section.getAttribute('id');
         }
       });
