@@ -1,11 +1,6 @@
 const resizeMap = () => {
-  console.log('hello?');
-
   const mapContainer = document.getElementById("map");
-
   const mapIframe = document.querySelector("#map iframe");
-
-  console.log(mapContainer.clientWidth);
 
   mapIframe.style.width = mapContainer.clientWidth + 'px';
   mapIframe.style.height = mapContainer.clientHeight + 'px';
@@ -41,6 +36,11 @@ document.addEventListener('DOMContentLoaded', () => {
       let current = '';
       const sections = document.querySelectorAll('section');
       sections.forEach(section => {
+        console.log(section.id);
+        console.log(scrollY);
+        console.log('offsetTop', section.offsetTop);
+        console.log('sectionHeight', section.clientHeight);
+
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
         if (scrollY >= sectionTop - sectionHeight / 2) {
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
   
     // Highlight current section
-    window.addEventListener('scroll', listener);
+    document.querySelector('main').addEventListener('scroll', listener);
   
     // Smooth scrolling
     links.forEach(link => {
