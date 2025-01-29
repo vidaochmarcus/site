@@ -107,7 +107,7 @@ section h1 {
   height: 100vh;
   max-height: 100vh;
   background: url("assets/bg.jpg") no-repeat fixed;
-  background-position: 70% 50%; 
+  background-position: 70% 30%; 
   background-size: cover;
   overflow: hidden;
 }
