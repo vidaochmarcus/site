@@ -77,7 +77,8 @@ header nav ul li a.active {
 /* sections */
 
 section {
-  scroll-snap-align: center; 
+  scroll-snap-align: start;
+  scroll-snap-stop: always; 
   min-height: 100vh;
   padding: 10px;
   display: flex;
@@ -283,8 +284,6 @@ a:hover {
 
 .flex {
   flex: 0 0 90%; 
-  scroll-snap-align: start;
-  scroll-snap-stop: always; 
   border: 0;
   padding: 16px;
   box-sizing: border-box;
