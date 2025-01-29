@@ -120,7 +120,6 @@ section h1 {
 #venue .flexContainer {
   flex-wrap: wrap;
   flex-direction: column;
-  max-width: 800px;
 }
 
 #venue div.flex {
@@ -137,6 +136,10 @@ section h1 {
   background: white;
 }
 
+#housing .flex {
+  min-width: 250px;
+}
+
 #housing img {
   max-width: 90%;
 }
@@ -145,9 +148,23 @@ section h1 {
   background: #ced6e0;
 }
 
+#toastmasters {
+  background-color: rgba(242, 216, 237, 0.8);
+  padding: 20px;
+}
+
 #toastmasters img {
-  max-width: 50%;
-  border-radius: 10px;
+  max-width: 90%;
+  border-radius: 30px;
+}
+
+#toastmasters .narrow {
+}
+
+@media (min-width: 768px) {
+  #toastmasters img {
+    max-width: 500px;
+  }
 }
 
 #photos {
@@ -171,7 +188,7 @@ section h1 {
 
 #rsvp {
   background: url("assets/osa.jpg");
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-position: bottom;
   background-attachment: fixed;
   background-color: #E8D6D2;
@@ -188,6 +205,16 @@ section#end {
   height: 10px;
   min-height: 10px;
   background-color: black;
+}
+
+div.narrow {
+  max-width: 800px;
+}
+
+div.border {
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
 }
 
 
@@ -256,7 +283,8 @@ a:hover {
 
 .flex {
   flex: 0 0 90%; 
-  scroll-snap-align: center; 
+  scroll-snap-align: start;
+  scroll-snap-stop: always; 
   border: 0;
   padding: 16px;
   box-sizing: border-box;

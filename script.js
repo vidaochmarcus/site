@@ -1,3 +1,17 @@
+function rot13(message) {
+  return message.replace(/[a-z]/gi, letter => String.fromCharCode(letter.charCodeAt(0) + (letter.toLowerCase() <= 'm' ? 13 : -13)));
+} 
+
+const deobfuscateMail = () => {
+  document.querySelectorAll("a.mailto").forEach(el => {
+    const original = el.innerText;
+    const rotated = rot13(original);
+
+    el.innerText = rotated;
+    el.href = `mailto:${rotated}`;
+  })
+}
+
 const resizeMap = () => {
   const header = document.querySelector("header");
   const buffer = document.querySelector("div#buffer");
@@ -35,6 +49,8 @@ const dateAnimation = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   dateAnimation();
+  deobfuscateMail();
+
     const links = document.querySelectorAll('header nav ul li a');
 
     const listener = () => {
