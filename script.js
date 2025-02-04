@@ -9,7 +9,7 @@ function getRndInteger(min, max) {
 const addFirework = () => {
   let div = document.createElement('div');
   div.classList.add('firework');
-  div.style.left = `${getRndInteger(20, 80)}%`;
+  div.style.left = `${getRndInteger(30, 70)}%`;
   document.querySelector('#wedding').appendChild(div);
 }
 
