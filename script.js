@@ -2,6 +2,17 @@ function rot13(message) {
   return message.replace(/[a-z]/gi, letter => String.fromCharCode(letter.charCodeAt(0) + (letter.toLowerCase() <= 'm' ? 13 : -13)));
 } 
 
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+const addFirework = () => {
+  let div = document.createElement('div');
+  div.classList.add('firework');
+  div.style.left = `${getRndInteger(20, 80)}%`;
+  document.querySelector('#wedding').appendChild(div);
+}
+
 const updateScroll = (id) => {
   const divContainer = document.querySelector(`#div-container-${id}`);
   const dotContainer = document.querySelector(`#dot-container-${id}`);
@@ -72,6 +83,10 @@ const dateAnimation = () => {
       textElement.textContent += text[index];
       index++;
       setTimeout(typeCharacter, 250);
+    } else {
+      for (let i=0; i<20; i++) {
+        setTimeout(addFirework, i * 50);
+      }
     }
   }
 
