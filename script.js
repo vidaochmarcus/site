@@ -27,7 +27,7 @@ const updateScroll = (id) => {
     let mid = div.offsetLeft + div.clientWidth / 2;
 
     if (mid > divContainer.scrollLeft && mid <= divContainer.scrollLeft + divContainer.clientWidth) {
-      dot.classList.add('active');
+      dot?.classList.add('active');
     }
   }
 
@@ -35,6 +35,13 @@ const updateScroll = (id) => {
     dotContainer.classList.add("hidden");
   } else {
     dotContainer.classList.remove("hidden");
+  }
+
+  const firework = document.querySelector(".firework");
+  if (id > 0) {
+    firework.classList.add("invisible");
+  } else {
+    firework.classList.remove("invisible");
   }
 }
 
