@@ -360,7 +360,7 @@ a:hover {
 /* scroll */
 
 .hidden {
-  visibility: hidden;
+  visibility: hidden !important;
 }
 
 .dot-container {

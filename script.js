@@ -11,6 +11,9 @@ const addFirework = () => {
   div.classList.add('firework');
   div.style.left = `${getRndInteger(30, 70)}%`;
   document.querySelector('#wedding').appendChild(div);
+  if (document.querySelector('main').scrollTop > 10) {
+    div.classList.add('hidden');
+  }
 }
 
 const updateScroll = (id) => {
@@ -35,13 +38,6 @@ const updateScroll = (id) => {
     dotContainer.classList.add("hidden");
   } else {
     dotContainer.classList.remove("hidden");
-  }
-
-  const firework = document.querySelector(".firework");
-  if (id > 0) {
-    firework.classList.add("invisible");
-  } else {
-    firework.classList.remove("invisible");
   }
 }
 
@@ -124,6 +120,15 @@ document.addEventListener('DOMContentLoaded', () => {
           link.classList.add('active');
         }
       });
+
+      const firework = document.querySelectorAll(".firework");
+      if (current != "wedding") {
+        console.log('making invisible')
+        firework.forEach(f => f.classList.add("hidden"));
+      } else {
+        console.log('making visible')
+        firework.forEach(f => f.classList.remove("hidden"));
+      }
     };
   
     // Highlight current section
