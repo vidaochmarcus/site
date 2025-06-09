@@ -22,6 +22,10 @@ const updateScroll = (id) => {
   const childDivs = document.querySelectorAll(`#div-container-${id} > div`);
   const childDots = document.querySelectorAll(`#dot-container-${id} .dot`);
 
+  if (!divContainer || !dotContainer) {
+    return;
+  }
+  
   childDots.forEach(el => el.classList.remove('active'));
 
   for (let i=0; i<childDivs.length; i++) {
@@ -123,10 +127,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const firework = document.querySelectorAll(".firework");
       if (current != "wedding") {
-        console.log('making invisible')
         firework.forEach(f => f.classList.add("hidden"));
       } else {
-        console.log('making visible')
         firework.forEach(f => f.classList.remove("hidden"));
       }
     };
